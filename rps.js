@@ -28,33 +28,33 @@ function getComputerChoice() {
 //User plays a round with the computer
 function playRound(humanChoice, computerChoice) {
     //User inputs rock as an option//
-    if (humanChoice === "rock" && computerChoice === "Rock") {
+    if (humanChoice === "Rock" && computerChoice === "Rock") {
         return "You tied with a computer!";
-    } else if (humanChoice === "rock" && computerChoice === "Paper") {
+    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
         return "You lost to a computer!";
         let computerScore = computerScore + 1; 
-    } else if (humanChoice === "rock" && computerChoice === "Scissors") {
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
         return "You beat a computer!";
         let humanScore = humanScore + 1;
     }
     //User inputs paper as an option//
-    if (humanChoice === "paper" && computerChoice === "Rock") {
+    if (humanChoice === "Paper" && computerChoice === "Rock") {
         return "You beat a computer!";
         let humanScore = humanScore + 1;
-    } else if (humanChoice === "paper" && computerChoice === "Paper") {
+    } else if (humanChoice === "Paper" && computerChoice === "Paper") {
         return "You tied with a computer!";
-    } else if (humanChoice === "paper" && computerChoice === "Scissors") {
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
         return "You lost to a computer!";
         let computerScore = computerScore + 1;
     }
     //User inputs scissors as an option//
-    if (humanChoice === "scissors" && computerChoice === "Rock") {
+    if (humanChoice === "Scissors" && computerChoice === "Rock") {
         return "You lost to a computer!";
         let computerScore = computerScore +1; 
-    } else if (humanChoice === "scissors" && computerChoice === "Paper") {
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
         return "You beat a computer!";
         let humanScore = humanScore + 1; 
-    } else if (humanChoice === "scissors" && computerChoice === "Scissors") {
+    } else if (humanChoice === "Scissors" && computerChoice === "Scissors") {
         return "You tied with a computer!";
 
     }
