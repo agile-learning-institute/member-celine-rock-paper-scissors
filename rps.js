@@ -31,32 +31,31 @@ function playRound(humanChoice, computerChoice) {
     if (humanChoice === "Rock" && computerChoice === "Rock") {
         return "You tied with a computer!";
     } else if (humanChoice === "Rock" && computerChoice === "Paper") {
+        computerScore = computerScore + 1; 
         return "You lost to a computer!";
-        let computerScore = computerScore + 1; 
     } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
-        return "You beat a computer!";
-        let humanScore = humanScore + 1;
+        humanScore = humanScore + 1;
+        return "You beat a computer with Rock!";
     }
     //User inputs paper as an option//
     if (humanChoice === "Paper" && computerChoice === "Rock") {
+        humanScore = humanScore + 1;
         return "You beat a computer!";
-        let humanScore = humanScore + 1;
     } else if (humanChoice === "Paper" && computerChoice === "Paper") {
         return "You tied with a computer!";
     } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        computerScore = computerScore + 1;
         return "You lost to a computer!";
-        let computerScore = computerScore + 1;
     }
     //User inputs scissors as an option//
     if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        computerScore = computerScore +1; 
         return "You lost to a computer!";
-        let computerScore = computerScore +1; 
     } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        humanScore = humanScore + 1; 
         return "You beat a computer!";
-        let humanScore = humanScore + 1; 
     } else if (humanChoice === "Scissors" && computerChoice === "Scissors") {
         return "You tied with a computer!";
-
     }
 
 }
@@ -65,6 +64,9 @@ function playRound(humanChoice, computerChoice) {
 let humanScore = 0;
 let computerScore = 0;
 
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
 console.log(playRound(getHumanChoice(),getComputerChoice()));
 
 //Program displays score after round
