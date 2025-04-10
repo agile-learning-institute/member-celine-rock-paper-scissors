@@ -12,8 +12,6 @@ function getHumanChoice() {
  
 }
 
-console.log(getHumanChoice()); 
-
 //Computer makes choice for game 
 function getComputerChoice() {
     var computerChoice = Math.random() * 3;
@@ -26,12 +24,6 @@ function getComputerChoice() {
     } 
 
 }
-
-console.log(getComputerChoice());
-
-//Initialize score for game
-let humanScore = 0;
-let computerScore = 0;
 
 //User plays a round with the computer
 function playRound(humanChoice, computerChoice) {
@@ -69,7 +61,11 @@ function playRound(humanChoice, computerChoice) {
 
 }
 
-console.log(playRound());
+//Initialize score for game
+let humanScore = 0;
+let computerScore = 0;
+
+console.log(playRound(getHumanChoice(),getComputerChoice()));
 
 //Program displays score after round
 console.log(humanScore);
