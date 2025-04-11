@@ -10,9 +10,7 @@ function getHumanChoice() {
         return "Scissors"; 
     }  
  
-}
-
-console.log(getHumanChoice()); 
+} 
 
 //Computer makes choice for game 
 function getComputerChoice() {
@@ -27,51 +25,55 @@ function getComputerChoice() {
 
 }
 
-console.log(getComputerChoice());
-
-//Initialize score for game
-let humanScore = 0;
-let computerScore = 0;
-
 //User plays a round with the computer
 function playRound(humanChoice, computerChoice) {
     //User inputs rock as an option//
-    if (humanChoice === "rock" && computerChoice === "Rock") {
+    if (humanChoice === "Rock" && computerChoice === "Rock") {
         return "You tied with a computer!";
-    } else if (humanChoice === "rock" && computerChoice === "Paper") {
-        return "You lost to a computer!";
-        let computerScore = computerScore + 1; 
-    } else if (humanChoice === "rock" && computerChoice === "Scissors") {
+    } else if (humanChoice === "Rock" && computerChoice === "Paper") {
+        computerScore = computerScore + 1;
+        return "You lost to a computer!"; 
+    } else if (humanChoice === "Rock" && computerChoice === "Scissors") {
+        humanScore = humanScore + 1;
         return "You beat a computer!";
-        let humanScore = humanScore + 1;
     }
     //User inputs paper as an option//
-    if (humanChoice === "paper" && computerChoice === "Rock") {
+    if (humanChoice === "Paper" && computerChoice === "Rock") {
+        humanScore = humanScore + 1;
         return "You beat a computer!";
-        let humanScore = humanScore + 1;
-    } else if (humanChoice === "paper" && computerChoice === "Paper") {
+    } else if (humanChoice === "Paper" && computerChoice === "Paper") {
         return "You tied with a computer!";
-    } else if (humanChoice === "paper" && computerChoice === "Scissors") {
+    } else if (humanChoice === "Paper" && computerChoice === "Scissors") {
+        computerScore = computerScore + 1;
         return "You lost to a computer!";
-        let computerScore = computerScore + 1;
     }
     //User inputs scissors as an option//
-    if (humanChoice === "scissors" && computerChoice === "Rock") {
-        return "You lost to a computer!";
-        let computerScore = computerScore +1; 
-    } else if (humanChoice === "scissors" && computerChoice === "Paper") {
-        return "You beat a computer!";
-        let humanScore = humanScore + 1; 
-    } else if (humanChoice === "scissors" && computerChoice === "Scissors") {
+    if (humanChoice === "Scissors" && computerChoice === "Rock") {
+        computerScore = computerScore +1;
+        return "You lost to a computer!"; 
+    } else if (humanChoice === "Scissors" && computerChoice === "Paper") {
+        humanScore = humanScore + 1;
+        return "You beat a computer!"; 
+    } else if (humanChoice === "Scissors" && computerChoice === "Scissors") {
         return "You tied with a computer!";
 
     }
 
 }
 
-console.log(playRound());
+//Initialize score for game
+let humanScore = 0;
+let computerScore = 0;
+
+//User plays five rounds with the computer
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
+console.log(playRound(getHumanChoice(),getComputerChoice()));
 
 //Program displays score after round
-console.log(humanScore);
-console.log(computerScore);
+console.log("Your score is " + humanScore + "!");
+console.log("The computer's score is " + computerScore + "!");
+
 
